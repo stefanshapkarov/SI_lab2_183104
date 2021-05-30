@@ -28,37 +28,37 @@ class Time {
 public class SILab2 {
 
     public List<Integer> function(List<Time> timesList) {
-        List<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>(); //A
 
-        for (int i = 0; i < timesList.size(); i++) {
-            int hr = timesList.get(i).getHours();
-            int min = timesList.get(i).getMinutes();
-            int sec = timesList.get(i).getSeconds();
-            if (hr < 0 || hr > 24){
-                if (hr < 0){
-                    throw new RuntimeException("The hours are smaller than the minimum");
+        for (int i = 0; i < timesList.size(); i++) { //B
+            int hr = timesList.get(i).getHours(); //C
+            int min = timesList.get(i).getMinutes(); //C
+            int sec = timesList.get(i).getSeconds(); //C
+            if (hr < 0 || hr > 24){ //D
+                if (hr < 0){ //E
+                    throw new RuntimeException("The hours are smaller than the minimum"); //F
                 }
-                else {
-                    throw new RuntimeException("The hours are grater than the maximum");
+                else { //E
+                    throw new RuntimeException("The hours are grater than the maximum"); //G
                 }
             }
-            else if (hr < 24) {
-                if (min < 0 || min > 59)
-                    throw new RuntimeException("The minutes are not valid!");
-                else {
-                    if (sec >= 0 && sec <= 59)
-                        result.add(hr * 3600 + min * 60 + sec);
-                    else
-                        throw new RuntimeException("The seconds are not valid");
+            else if (hr < 24) { //H
+                if (min < 0 || min > 59) //I
+                    throw new RuntimeException("The minutes are not valid!"); //K
+                else { //I
+                    if (sec >= 0 && sec <= 59) //J
+                        result.add(hr * 3600 + min * 60 + sec); //L
+                    else //J
+                        throw new RuntimeException("The seconds are not valid"); //M
                 }
             } 
-            else if (hr == 24 && min == 0 && sec == 0) {
-                    result.add(hr * 3600 + min * 60 + sec);
+            else if (hr == 24 && min == 0 && sec == 0) { //N
+                    result.add(hr * 3600 + min * 60 + sec); //O
             } 
-            else {
-                throw new RuntimeException("The time is greater than the maximum");
+            else { //P
+                throw new RuntimeException("The time is greater than the maximum"); //Q
             }
         }
-        return result;
+        return result; //R
     }
 }
